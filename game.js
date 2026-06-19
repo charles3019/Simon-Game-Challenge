@@ -1,5 +1,18 @@
 var buttonColours = ["red", "blue", "green", "yellow"];
 var gamePattern = [];
+var userClickedPattern = [];
+
+// Step 1-2: Handle button clicks with jQuery
+$(".btn").on("click", function() {
+  // Get the id of the clicked button
+  var userChosenColour = $(this).attr("id");
+  
+  // Step 4: Add to userClickedPattern array
+  userClickedPattern.push(userChosenColour);
+  
+  // Log to console for testing
+  console.log(userClickedPattern);
+});
 
 function nextSequence() {
   var randomNumber = Math.floor(Math.random() * 4);
